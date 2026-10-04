@@ -1,16 +1,14 @@
 <?php
 
-$servername ="localhost";
+$servername = "localhost";
 $username = "root";
-$password ="";
-$dbname="php";
+$password = "";
+$dbname = "php";
 
-$conn = new mysqli($servername,$username,$password,$dbname);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-if(!$conn){
-    echo "not connected";
+if ($conn->connect_error) {
+    die("Database connection failed: " . $conn->connect_error);
 }
-else{
-    echo "connected";
-}
+
 ?>
