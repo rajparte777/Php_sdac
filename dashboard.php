@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 include "db.php";
 
@@ -147,3 +148,6 @@ $result = $conn->query("select blog . * , user.name from blog join user on blog.
         ></script>
     </body>
 </html>
+=======
+<h1>Dashboard Page</h1>
+>>>>>>> 2c17d5bbe6694955c1c6b38f8a0a53074dfb7f9e

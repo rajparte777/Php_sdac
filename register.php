@@ -41,6 +41,7 @@ if($_SERVER['REQUEST_METHOD']==="POST"){
             <!-- place navbar here -->
         </header>
         <main>
+<<<<<<< HEAD
             <div
                 class="container col-4 border rounded shadow p-3 mt-5"
             >
@@ -91,6 +92,60 @@ if($_SERVER['REQUEST_METHOD']==="POST"){
 
 
 
+=======
+            <form action="" method="post">
+                <div
+                    class="container col-6 "
+                >
+                   <div class="mb-3 ">
+                    <label for="" class="form-label">Name</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        name="name"
+                        id=""
+                        aria-describedby="helpId"
+                        placeholder=""
+                    />
+                   
+                   </div>
+                   <div class="mb-3">
+                    <label for="" class="form-label">Email</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        name="email"
+                        id=""
+                        aria-describedby="helpId"
+                        placeholder=""
+                    />
+                    
+                   </div>
+                   <div class="mb-3">
+                    <label for="" class="form-label">Password</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        name="password"
+                        id=""
+                        aria-describedby="helpId"
+                        placeholder=""
+                    />
+                   
+                   </div>
+                   
+                   <button
+                    type="submit"
+                    class="btn btn-primary"
+                   >
+                    Submit
+                   </button>
+                   
+                   
+                </div>
+                
+            </form>
+>>>>>>> 2c17d5bbe6694955c1c6b38f8a0a53074dfb7f9e
 
 
 
@@ -106,3 +161,26 @@ if($_SERVER['REQUEST_METHOD']==="POST"){
         ></script>
     </body>
 </html>
+<<<<<<< HEAD
+=======
+
+<?php
+  include 'db.php';
+  if($_SERVER["REQUEST_METHOD"] === 'POST'){
+    $name =$_POST['name'];
+    $email =$_POST['email'];
+    $password=password_hash($_POST['password'],PASSWORD_DEFAULT);
+
+    $sql =$conn->prepare('insert into user(name,email,password) values(?,?,?)');
+    $sql->bind_param('sss',$name,$email,$password);
+    
+    if($sql->execute()){
+        header('location:login.php');
+        echo 'data enter into register table';
+    }
+     else{
+    echo 'data fail to enter in register table';
+  }
+  }
+?>
+>>>>>>> 2c17d5bbe6694955c1c6b38f8a0a53074dfb7f9e

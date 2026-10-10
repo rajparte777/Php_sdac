@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 include "db.php";
 if($_SERVER['REQUEST_METHOD']==="POST"){
@@ -23,6 +24,8 @@ if($_SERVER['REQUEST_METHOD']==="POST"){
 ?>
 
 
+=======
+>>>>>>> 2c17d5bbe6694955c1c6b38f8a0a53074dfb7f9e
 <!doctype html>
 <html lang="en" data-bs-theme="light">
     <head>
@@ -45,6 +48,7 @@ if($_SERVER['REQUEST_METHOD']==="POST"){
             <!-- place navbar here -->
         </header>
         <main>
+<<<<<<< HEAD
             <div
                 class="container col-4 border rounded shadow p-3 mt-5"
             >
@@ -85,6 +89,51 @@ if($_SERVER['REQUEST_METHOD']==="POST"){
 
 
 
+=======
+            <form action="" method="post">
+             
+                 <div
+                    class="container col-4"
+                 >
+                      <div class="mb-3 col-4">
+                    <label for="" class="form-label">Email</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        name="email"
+                        id=""
+                        aria-describedby="helpId"
+                        placeholder=""
+                    />
+                    
+                   </div>
+                   <div class="mb-3">
+                    <label for="" class="form-label">Password</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        name="password"
+                        id=""
+                        aria-describedby="helpId"
+                        placeholder=""
+                    />
+                   
+                   </div>
+                   
+                   <button
+                    type="submit"
+                    class="btn btn-primary"
+                   >
+                    Submit
+                   </button>
+                 </div>
+                 
+                  
+                   
+                </div>
+                
+            </form>
+>>>>>>> 2c17d5bbe6694955c1c6b38f8a0a53074dfb7f9e
 
 
 
@@ -100,3 +149,31 @@ if($_SERVER['REQUEST_METHOD']==="POST"){
         ></script>
     </body>
 </html>
+<<<<<<< HEAD
+=======
+
+<?php
+include "db.php";
+if($_SERVER["REQUEST_METHOD"] === 'POST'){
+    $email=$_POST['email'];
+    $password =$_POST['password'];
+    
+    $sql =$conn->prepare('select password from user where email=?');
+    $sql->bind_param('s',$email);
+    $sql->execute();
+    $sql->bind_result($pass);
+    $sql->fetch();
+
+    if(password_verify($password,$pass)){
+        $_SESSION['email'] =$email;
+        header('location:dashboard.php');
+    }
+    else{
+        echo '<script>alert("wrong password or email")</script> ' ;
+    }
+    echo $email.' + '.$password.' + '.$pass;
+}
+
+
+?>
+>>>>>>> 2c17d5bbe6694955c1c6b38f8a0a53074dfb7f9e
